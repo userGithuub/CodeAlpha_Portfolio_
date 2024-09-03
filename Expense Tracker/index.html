@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background">
+        <div class="container">
+            <header>
+                <h1>Expense Tracker</h1>
+            </header>
+
+            <div class="budget-section">
+                <label for="total-budget">Total Budget: </label>
+                <input type="number" id="total-budget" placeholder="Enter total budget">
+                <p id="remaining-budget">Remaining Budget: 0</p>
+            </div>
+
+            <form id="expense-form">
+                <input type="text" id="expense-name" placeholder="Enter expense" required>
+                <input type="number" id="expense-amount" placeholder="Enter amount" required>
+                <input type="text" id="expense-date" placeholder="DD-MM-YYYY" required>
+                <button type="submit">Add Expense</button>
+            </form>
+
+            <h2>Select Date</h2>
+            <select id="date-filter">
+                <option value="all">All Dates</option>
+                <!-- Dates will be dynamically added here -->
+            </select>
+
+            <ul id="expense-list">
+                <!-- Expenses will be dynamically added here -->
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
