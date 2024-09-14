@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Dashboard</title>
+    <!-- Styling -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- ApexCharts -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+       <div class="nav-left">
+            <i class="menu-btn fas fa-bars"></i>
+            <h2 class="logo">ASMBoard</h2>
+            <span class="followers-text">ONBOARDED</span>
+       </div>
+       <div class="nav-right">
+           <div class="search">
+               <i class="fas fa-search"></i>
+               <input type="text" placeholder="search...">
+           </div>
+           <div class="notification">
+               <i class="fas fa-bell"></i>
+           </div>
+       </div> 
+    </nav>
+    
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="profile">
+                <img class="profile-image" src="imgs\profile-picture.jpg" alt="Profile">
+                <h3>Tanya Valecha</h3>
+                <p>Content Creator</p>
+            </div>
+            <div class="menu">
+                <div class="menu-detail menu-active">
+                    <a href="#"><i class="fas fa-chart-pie menu-icon"></i><span>Dashboard</span></a>
+                </div>
+                <div class="menu-detail">
+                    <a href="#"><i class="fas fa-gifts menu-icon"></i><span>Campaign</span></a>
+                </div>
+                <div class="menu-detail">
+                    <a href="#"><i class="fas fa-headset menu-icon"></i><span>Support Center</span></a>
+                </div>
+                <div class="menu-detail">
+                    <a href="#"><i class="fas fa-user-secret menu-icon"></i><span>Security</span></a>
+                </div>
+                <div class="menu-detail">
+                    <a href="#"><i class="fas fa-cog menu-icon"></i><span>Settings</span></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-container">
+            <!-- Left Container -->
+            <div class="left-container">
+                <div class="wrapper">
+                    <div class="card-wrapper">
+                        <!-- Social Media Cards -->
+                        <div class="card">
+                            <i class="fab fa-instagram social-icon"></i>
+                            <h1 class="count">3.4M</h1>
+                            <small>Followers</small>
+                            <div class="dropdown">
+                                <button class="btn btn-more"><i class="fas fa-ellipsis-v"></i></button>
+                                <div class="dropdown-content">
+                                    <a href="#">Details</a>
+                                    <a href="#">Download</a>
+                                    <a href="#">Share</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <i class="fab fa-youtube social-icon"></i>
+                            <h1 class="count">720K</h1>
+                            <small>Subscribers</small>
+                            <div class="dropdown">
+                                <button class="btn btn-more"><i class="fas fa-ellipsis-v"></i></button>
+                                <div class="dropdown-content">
+                                    <a href="#">Details</a>
+                                    <a href="#">Download</a>
+                                    <a href="#">Share</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-wrapper">
+                        <!-- Social Media Cards -->
+                        <div class="card">
+                            <i class="fab fa-facebook-f social-icon"></i>
+                            <h1 class="count">287K</h1>
+                            <small>Followers</small>
+                            <div class="dropdown">
+                                <button class="btn btn-more"><i class="fas fa-ellipsis-v"></i></button>
+                                <div class="dropdown-content">
+                                    <a href="#">Details</a>
+                                    <a href="#">Download</a>
+                                    <a href="#">Share</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <i class="fab fa-twitter social-icon"></i>
+                            <h1 class="count">17.8M</h1>
+                            <small>Followers</small>
+                            <div class="dropdown">
+                                <button class="btn btn-more"><i class="fas fa-ellipsis-v"></i></button>
+                                <div class="dropdown-content">
+                                    <a href="#">Details</a>
+                                    <a href="#">Download</a>
+                                    <a href="#">Share</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wrapper">
+                    <!-- Trend Data Section -->
+                    <div class="card">
+                        <div class="title-wrapper">
+                            <h3 class="title">Trend Data</h3>
+                            <div class="filter">
+                                <a class="active" href="#">Day</a>
+                                <a href="#">Week</a>
+                                <a href="#">Month</a>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <div id="chLine"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Container -->
+            <div class="right-container">
+                <div class="card">
+                    <h3 class="title">Summary</h3>
+                    <div id="dougnut-chart"></div>
+
+                    <div class="chart-detail">
+                        <div class="detail-wrapper">
+                            <i class="fas fa-theater-masks"></i>
+                            <p>Viewers</p>
+                            <h3 class="detail-num">3400k <span class="up-down green">+64%</span></h3>
+                        </div>
+                        <hr class="divider">
+                        <div class="detail-wrapper"></div>
+                            <i class="fas fa-user-friends"></i>
+                            <span class="detail-title">Followers</span>
+                            <span class="detail-num">3100</span>
+                        </div>
+                        <hr class="divider">
+                        <div class="detail-wrapper">
+                            <i class="fas fa-shapes"></i>
+                            <p>Connections</p>
+                            <h3 class="detail-num">457 <span class="up-down red">-15%</span></h3>
+                        </div>
+                        <hr class="divider">
+                        <div class="detail-wrapper">
+                            <i class="fas fa-shapes"></i>
+                            <p>Likes</p>
+                            <h3 class="detail-num">576 <span class="up-down green">+72%</span></h3>
+                        </div>
+                        <hr class="divider">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Container (if needed) -->
+            <div class="bottom-container">
+                <div class="card">
+                    <h3 class="title">RECENT UPLOAD</h3>
+                    <div class="table-wrapper">
+                        <table class="table">
+                            <tr>
+                                <th>Thumbnails & Descriptions </th>
+                                <th>Dates</th>
+                                <th>View</th>
+                                <th>Comment</th>
+                                <th>Likes</th>
+                                <th>More</th>
+                            </tr>
+                            <tr>
+                                <td class="table-title">
+                                    <img class="table-image" src="imgs\content-1.jpg">
+                                    <p>Lorem, ipsum dolor sit amet </p>
+                                </td>
+                                <td>Dec 24,2022</td>
+                                <td>290K</td>  
+                                <td>151</td>
+                                <td>70K</td>
+                                <td><button class="btn btn-table">Details</button></td>                        
+                            </tr>
+                            <tr>
+                                <td class="table-title">
+                                    <img class="table-image" src="imgs\content-2.jpg">
+                                    <p>Lorem, ipsum dolor sit amet </p>
+                                </td>
+                                <td>Jan 25,2023</td>
+                                <td>32K</td>  
+                                <td>10</td>
+                                <td>465</td>
+                                <td><button class="btn btn-table">Details</button></td>                        
+                            </tr>
+                            <tr>
+                                <td class="table-title">
+                                    <img class="table-image" src="imgs\content-3.jpg">
+                                    <p>Lorem, ipsum dolor sit amet </p>
+                                </td>
+                                <td>Feb 06,2022</td>
+                                <td>120K</td>  
+                                <td>342</td>
+                                <td>67K</td>
+                                <td><button class="btn btn-table">Details</button></td>                        
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="main.js"></script>
+</html>
